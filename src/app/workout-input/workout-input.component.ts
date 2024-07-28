@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Workout } from '../workout';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf, UpperCasePipe } from '@angular/common';
+import { UserService } from '../user.service';
 
 @Component({
   standalone: true,
@@ -11,9 +12,15 @@ import { NgIf, UpperCasePipe } from '@angular/common';
   imports: [FormsModule, NgIf, UpperCasePipe],
 })
 export class WorkoutInputComponent {
-  @Input() workout: Workout = new Workout();
+  constructor(private userService: UserService) {}
+  @Input() workout: Workout = new Workout('', '', 0);
 
   onSubmit(workoutForm: NgForm) {
-    console.log(workoutForm);
+    this.userService.addUserData(workoutForm.form.value);
+    this.workout = {
+      userName: '',
+      workoutMinutes: 0,
+      workoutType: '',
+    };
   }
 }
