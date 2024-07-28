@@ -1,1 +1,30 @@
-<p>workout-input works!</p>
+<form (ngSubmit)="onSubmit(workoutForm)" #workoutForm="ngForm">
+  <div>
+    <label for="userName">User Name : </label>
+    <input
+      type="text"
+      placeholder="User Name"
+      name="userName"
+      [(ngModel)]="workout.userName"
+    />
+  </div>
+  <div>
+    <label for="workoutType">Workout Type : </label>
+    <select name="workoutType" [(ngModel)]="workout.workoutType">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div>
+    <label for="workoutMinutes">Workout Minutes : </label>
+    <input
+      type="number"
+      placeholder="Workout Minutes"
+      name="workoutMinutes"
+      [(ngModel)]="workout.workoutMinutes"
+    />
+  </div>
+  <button>Add Workout</button>
+</form>

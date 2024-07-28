@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 import { WorkoutInputComponent } from './workout-input/workout-input.component';
 
 @NgModule({
-  declarations: [AppComponent, WorkoutInputComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, WorkoutInputComponent],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
