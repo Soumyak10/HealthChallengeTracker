@@ -1,0 +1,46 @@
+<input
+  id="query"
+  [(ngModel)]="query"
+  placeholder="Search"
+  (ngModelChange)="updateFilteredUsers()"
+/>
+
+<div>
+  <label for="workoutType">Filter by workout type</label>
+  <select
+    name="workoutType"
+    [(ngModel)]="filter"
+    (ngModelChange)="updateFilteredUsers()"
+  >
+    <option value="">All</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+</div>
+
+<p-table
+  [value]="filteredUsers"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [paginator]="true"
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10, 20, 50]"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Workouts</th>
+      <th>No. of Workouts</th>
+      <th>Total Workout Minutes</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user>
+    <tr>
+      <td align="center">{{ user.name }}</td>
+      <td align="center">{{ getAllWorkouts(user.workouts) }}</td>
+      <td align="center">{{ user.workouts.length }}</td>
+      <td align="center">{{ getTotalWorkoutMinutes(user.workouts) }}</td>
+    </tr>
+  </ng-template>
+</p-table>
