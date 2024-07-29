@@ -1,27 +1,129 @@
-# HealthChallengeTracker
+# Health Challenge Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Overview
 
-## Development server
+The Health Challenge Tracker is a single-page application (SPA) developed with Angular 14+ that allows users to log their workout sessions, filter and search through their workout history, and visualize their progress. This project makes use of Angular Material and PrimeNG for UI components and TailwindCSS for styling. It also includes local storage for data persistence and is deployed on Netlify.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **User Workout Input**: Users can add workout sessions by entering their name, workout type, and workout minutes.
+- **Workout List Display**: Displays a list of all workouts with search and filter functionalities.
+- **Search and Filter**: Users can search for workouts by username and filter by workout type.
+- **Pagination**: Supports pagination for workout lists with more than 5 users (Please Refresh if it doesn't work).
+- **Local Storage**: Data is stored locally using localStorage to persist user workouts.
+- **Charts**: Visual representation of workout progress using charts.
+- **Unit Tests**: 100% code coverage for one component and one service, with a code coverage report included in the README.
+- **Deployment**: The application is hosted on netlify.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Assumptions
 
-## Build
+- Initial data includes three users with predefined workout sessions.
+- Data is persisted in localStorage, ensuring it remains available even after a page refresh.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- Angular 14+
+- Angular Material
+- PrimeNG
+- TailwindCSS
+- LocalStorage
+- Netlify
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+To run the project locally, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the repository**:
 
-## Further help
+   ```bash
+   git clone https://github.com/Soumyak10/HealthChallengeTracker/tree/mastert
+   cd health-challenge-tracker
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the application**:
+   ```bash
+   ng serve
+   ```
+   The application will be accessible at `http://localhost:4200`.
+
+## Unit Tests
+
+To run the unit tests and view the code coverage report:
+
+1. **Run tests**:
+
+   ```bash
+   ng test --code-coverage
+   ```
+
+2. **View the coverage report**:
+   Open the `coverage` directory and open the `index.html` file in a browser to view the code coverage report.
+
+## Deployment
+
+The application is hosted on Netlify You can access the live version at:
+
+https://soumya-health-challenge-tracker.netlify.app/
+
+## Project Structure
+
+```
+health-challenge-tracker/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── workout-input/
+│   │   │   │   ├── workout-input.component.html
+│   │   │   │   ├── workout-input.component.ts
+│   │   │   │   ├── workout-input.component.css
+│   │   │   ├── workout-list/
+│   │   │   │   ├── workout-list.component.html
+│   │   │   │   ├── workout-list.component.ts
+│   │   │   │   ├── workout-list.component.css
+│   │   ├── services/
+│   │   │   ├── user.service.ts
+│   │   ├── models/
+│   │   │   ├── user.ts
+│   │   │   ├── workout.ts
+│   │   ├── app.module.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   ├── assets/
+│   ├── environments/
+│   ├── main.ts
+│   ├── styles.css
+├── angular.json
+├── package.json
+└── README.md
+```
+
+## Usage
+
+### Adding a Workout
+
+1. Click the "Add Workout" button to display the workout input form.
+2. Enter the user name, workout type, and workout minutes.
+3. Click "Save Workout" to add the workout to the list.
+
+### Searching and Filtering
+
+- **Search**: Use the search input to filter workouts by user name.
+- **Filter**: Use the dropdown to filter workouts by workout type.
+
+### Pagination
+
+- The workout list supports pagination, allowing users to navigate through multiple pages of workout entries.
+
+### Charts
+
+Charts provide a visual representation of the workout progress for each user (Time v/s Workout).
+
+## Contact
+
+For any questions or issues, please open an issue in the repository or contact Soumya Kessharwani at Kesharwanisoumya10@gmail.com.

@@ -7,7 +7,9 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title = 'health-challenge-tracker';
+
   constructor(private titleService: Title) {
-    this.titleService.setTitle('health-challenge-tracker');
+    this.titleService.setTitle(this.title);
   }
 }

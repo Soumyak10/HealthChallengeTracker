@@ -12,6 +12,27 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
 })
 export class WorkoutListComponent {
+  filterWorkoutType!: string;
+  filterUserData() {
+    throw new Error('Method not implemented.');
+  }
+  filteredUserData: any;
+  searchName!: string;
+  searchUserData() {
+    throw new Error('Method not implemented.');
+  }
+  rows!: number;
+  first!: number;
+  onPageChange(arg0: {
+    first: number;
+    rows: number;
+    page: number;
+    pageCount: number;
+  }) {
+    throw new Error('Method not implemented.');
+  }
+  paginatedUserData: any;
+  userData: any;
   constructor(private userService: UserService) {}
   users = this.userService.getUserData();
   filteredUsers = this.users;

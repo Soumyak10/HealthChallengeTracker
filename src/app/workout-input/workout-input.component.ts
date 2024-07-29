@@ -14,6 +14,7 @@ import { UserService } from '../user.service';
 export class WorkoutInputComponent {
   showForm = false;
   @Input() workout: Workout = new Workout('', '', 0);
+  inputValue!: string;
 
   constructor(private userService: UserService) {}
 
@@ -23,17 +24,19 @@ export class WorkoutInputComponent {
 
   onSubmit(workoutForm: NgForm) {
     if (workoutForm.valid) {
-      this.userService.addUserData(workoutForm.form.value);
+      // Create a Workout instance from form values
+      const workoutData = new Workout(
+        workoutForm.form.value.userName,
+        workoutForm.form.value.workoutType,
+        workoutForm.form.value.workoutMinutes
+      );
+      this.userService.addUserData(workoutData);
       this.resetForm();
       this.toggleForm();
     }
   }
 
   resetForm() {
-    this.workout = {
-      userName: '',
-      workoutMinutes: 0,
-      workoutType: '',
-    };
+    this.workout = new Workout('', '', 0);
   }
 }
