@@ -8,15 +8,31 @@ import { UserService } from '../user.service';
   standalone: true,
   selector: 'app-workout-input',
   templateUrl: './workout-input.component.html',
-  styleUrl: './workout-input.component.css',
+  styleUrls: ['./workout-input.component.css'],
   imports: [FormsModule, NgIf, UpperCasePipe],
 })
 export class WorkoutInputComponent {
-  constructor(private userService: UserService) {}
+  showForm = false; // Property to control form visibility
   @Input() workout: Workout = new Workout('', '', 0);
 
+  constructor(private userService: UserService) {}
+
+  // Method to toggle the form visibility
+  toggleForm() {
+    this.showForm = !this.showForm;
+  }
+
+  // Method to handle form submission
   onSubmit(workoutForm: NgForm) {
-    this.userService.addUserData(workoutForm.form.value);
+    if (workoutForm.valid) {
+      this.userService.addUserData(workoutForm.form.value);
+      this.resetForm();
+      this.toggleForm(); // Hide the form after submission
+    }
+  }
+
+  // Method to reset the form fields
+  resetForm() {
     this.workout = {
       userName: '',
       workoutMinutes: 0,

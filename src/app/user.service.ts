@@ -78,7 +78,6 @@ export class UserService {
         workouts: [workout],
       });
     }
-
     this.saveUserData();
   }
 }

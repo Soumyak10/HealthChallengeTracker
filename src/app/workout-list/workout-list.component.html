@@ -1,28 +1,39 @@
-<input
-  id="query"
-  [(ngModel)]="query"
-  placeholder="Search"
-  (ngModelChange)="updateFilteredUsers()"
-/>
-
-<div>
-  <label for="workoutType">Filter by workout type</label>
-  <select
-    name="workoutType"
-    [(ngModel)]="filter"
-    (ngModelChange)="updateFilteredUsers()"
-  >
-    <option value="">All</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
+<div class="search-filter-container">
+  <h2 class="section-title">Workout List</h2>
+  <div class="search-filter-content">
+    <div class="search-container">
+      <label for="username" class="filter-label">Seach By User Name</label>
+      <input
+        id="query"
+        [(ngModel)]="query"
+        placeholder="Search by name"
+        (ngModelChange)="updateFilteredUsers()"
+        class="search-input"
+      />
+    </div>
+    <div class="filter-container">
+      <label for="workoutType" class="filter-label"
+        >Filter by workout type</label
+      >
+      <select
+        name="workoutType"
+        [(ngModel)]="filter"
+        (ngModelChange)="updateFilteredUsers()"
+        class="filter-select"
+      >
+        <option value="">All</option>
+        <option value="Running">Running</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Yoga">Yoga</option>
+      </select>
+    </div>
+  </div>
 </div>
 
 <p-table
   [value]="filteredUsers"
-  [tableStyle]="{ 'min-width': '50rem' }"
+  [tableStyle]="{ 'min-width': '100%' }"
   [paginator]="true"
   [rows]="5"
   [rowsPerPageOptions]="[5, 10, 20, 50]"

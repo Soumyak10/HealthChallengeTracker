@@ -1,30 +1,50 @@
-<form (ngSubmit)="onSubmit(workoutForm)" #workoutForm="ngForm">
-  <div>
-    <label for="userName">User Name : </label>
-    <input
-      type="text"
-      placeholder="User Name"
-      name="userName"
-      [(ngModel)]="workout.userName"
-    />
+<!-- Trigger button to open the form -->
+<button class="show-form-button" (click)="toggleForm()">Add Workout</button>
+
+<!-- Form modal -->
+<div class="form-container" *ngIf="showForm">
+  <div class="form-wrapper">
+    <button class="close-button" (click)="toggleForm()">&times;</button>
+    <form (ngSubmit)="onSubmit(workoutForm)" #workoutForm="ngForm">
+      <h2 class="form-title">Add New Workout</h2>
+      <div class="form-group">
+        <label for="userName" class="form-label">User Name:</label>
+        <input
+          type="text"
+          placeholder="Enter user name"
+          name="userName"
+          [(ngModel)]="workout.userName"
+          class="form-input"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="workoutType" class="form-label">Workout Type:</label>
+        <select
+          name="workoutType"
+          [(ngModel)]="workout.workoutType"
+          class="form-select"
+          required
+        >
+          <option value="">Select workout type</option>
+          <option value="Running">Running</option>
+          <option value="Swimming">Swimming</option>
+          <option value="Cycling">Cycling</option>
+          <option value="Yoga">Yoga</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="workoutMinutes" class="form-label">Workout Minutes:</label>
+        <input
+          type="number"
+          placeholder="Enter workout minutes"
+          name="workoutMinutes"
+          [(ngModel)]="workout.workoutMinutes"
+          class="form-input"
+          required
+        />
+      </div>
+      <button type="submit" class="form-button">Save Workout</button>
+    </form>
   </div>
-  <div>
-    <label for="workoutType">Workout Type : </label>
-    <select name="workoutType" [(ngModel)]="workout.workoutType">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-  </div>
-  <div>
-    <label for="workoutMinutes">Workout Minutes : </label>
-    <input
-      type="number"
-      placeholder="Workout Minutes"
-      name="workoutMinutes"
-      [(ngModel)]="workout.workoutMinutes"
-    />
-  </div>
-  <button>Add Workout</button>
-</form>
+</div>
