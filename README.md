@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Health Challenge Tracker is a single-page application (SPA) developed with Angular 14+ that allows users to log their workout sessions, filter and search through their workout history, and visualize their progress. This project makes use of Angular Material and PrimeNG for UI components and TailwindCSS for styling. It also includes local storage for data persistence and is deployed on Netlify.
+The Health Challenge Tracker is a single-page application (SPA) developed with Angular 14+ that allows users to log their workout sessions, filter and search through their workout history, and visualize their progress. This project makes use of PrimeNG for UI components and TailwindCSS for styling. It also includes local storage for data persistence and is deployed on Netlify.
 
 ## Features
 
@@ -12,7 +12,7 @@ The Health Challenge Tracker is a single-page application (SPA) developed with A
 - **Pagination**: Supports pagination for workout lists with more than 5 users (Please Refresh if it doesn't work).
 - **Local Storage**: Data is stored locally using localStorage to persist user workouts.
 - **Charts**: Visual representation of workout progress using charts.
-- **Unit Tests**: 100% code coverage for one component and one service, with a code coverage report included in the README.
+- **Unit Tests**: 90% code coverage one service and 87% code coverage for whole project, with a code coverage report included below.
 - **Deployment**: The application is hosted on netlify.
 
 ## Assumptions
@@ -23,7 +23,6 @@ The Health Challenge Tracker is a single-page application (SPA) developed with A
 ## Technologies Used
 
 - Angular 14+
-- Angular Material
 - PrimeNG
 - TailwindCSS
 - LocalStorage
@@ -77,20 +76,23 @@ https://soumya-health-challenge-tracker.netlify.app/
 health-challenge-tracker/
 ├── src/
 │   ├── app/
-│   │   ├── components/
-│   │   │   ├── workout-input/
-│   │   │   │   ├── workout-input.component.html
-│   │   │   │   ├── workout-input.component.ts
-│   │   │   │   ├── workout-input.component.css
-│   │   │   ├── workout-list/
-│   │   │   │   ├── workout-list.component.html
-│   │   │   │   ├── workout-list.component.ts
-│   │   │   │   ├── workout-list.component.css
-│   │   ├── services/
-│   │   │   ├── user.service.ts
-│   │   ├── models/
-│   │   │   ├── user.ts
-│   │   │   ├── workout.ts
+|   |   ├── progress-charts/
+│   │   │   ├── progress-charts.component.html
+│   │   │   ├── progress-charts.component.ts
+│   │   │   ├── progress-charts.component.css
+│   │   ├── workout-input/
+│   │   │   ├── workout-input.component.html
+│   │   │   ├── workout-input.component.ts
+│   │   │   ├── workout-input.component.css
+|   |   |   |── workout-input.specs.ts
+│   │   ├── workout-list/
+│   │   │   ├── workout-list.component.html
+│   │   │   ├── workout-list.component.ts
+│   │   │   ├── workout-list.component.css
+|   |   |   |── workout-list.specs.ts
+│   │   ├── user.service.ts
+│   │   ├── user.ts
+│   │   ├── workout.ts
 │   │   ├── app.module.ts
 │   │   ├── app.component.html
 │   │   ├── app.component.ts
@@ -119,6 +121,12 @@ health-challenge-tracker/
 ### Pagination
 
 - The workout list supports pagination, allowing users to navigate through multiple pages of workout entries.
+
+### Code Coverage Reports
+
+![Coverage Report of Service]('./ServiceReport.png')
+![Coverage Report of The App Component]('./AppComponentReport.png')
+![Coverage Report of The Project]('./ProjectReport.png')
 
 ### Charts
 
