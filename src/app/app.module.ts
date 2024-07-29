@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { WorkoutInputComponent } from './workout-input/workout-input.component';
 import { WorkoutListComponent } from './workout-list/workout-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressChartsComponent } from './progress-charts/progress-charts.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     WorkoutInputComponent,
     WorkoutListComponent,
     BrowserAnimationsModule,
+    ProgressChartsComponent,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

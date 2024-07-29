@@ -1,23 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { WorkoutInputComponent } from './workout-input.component';
 
 describe('WorkoutInputComponent', () => {
-  let component: WorkoutInputComponent;
-  let fixture: ComponentFixture<WorkoutInputComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WorkoutInputComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(WorkoutInputComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [WorkoutInputComponent],
+    }).compileComponents();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(WorkoutInputComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
