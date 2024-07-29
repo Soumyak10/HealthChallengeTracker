@@ -12,26 +12,23 @@ import { UserService } from '../user.service';
   imports: [FormsModule, NgIf, UpperCasePipe],
 })
 export class WorkoutInputComponent {
-  showForm = false; // Property to control form visibility
+  showForm = false;
   @Input() workout: Workout = new Workout('', '', 0);
 
   constructor(private userService: UserService) {}
 
-  // Method to toggle the form visibility
   toggleForm() {
     this.showForm = !this.showForm;
   }
 
-  // Method to handle form submission
   onSubmit(workoutForm: NgForm) {
     if (workoutForm.valid) {
       this.userService.addUserData(workoutForm.form.value);
       this.resetForm();
-      this.toggleForm(); // Hide the form after submission
+      this.toggleForm();
     }
   }
 
-  // Method to reset the form fields
   resetForm() {
     this.workout = {
       userName: '',

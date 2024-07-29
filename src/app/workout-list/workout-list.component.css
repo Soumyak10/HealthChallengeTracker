@@ -17,7 +17,7 @@
 
 .search-container {
   flex: 1;
-  max-width: 45%; /* Adjust as needed */
+  max-width: 45%;
 }
 
 .search-input {
@@ -29,7 +29,7 @@
 
 .filter-container {
   flex: 1;
-  max-width: 45%; /* Adjust as needed */
+  max-width: 45%;
   text-align: right;
 }
 

@@ -1,7 +1,4 @@
-<!-- Trigger button to open the form -->
 <button class="show-form-button" (click)="toggleForm()">Add Workout</button>
-
-<!-- Form modal -->
 <div class="form-container" *ngIf="showForm">
   <div class="form-wrapper">
     <button class="close-button" (click)="toggleForm()">&times;</button>
@@ -44,7 +41,9 @@
           required
         />
       </div>
-      <button type="submit" class="form-button">Save Workout</button>
+      <div class="button-container">
+        <button type="submit" class="form-button">Save Workout</button>
+      </div>
     </form>
   </div>
 </div>

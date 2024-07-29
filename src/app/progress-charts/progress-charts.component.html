@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="sidebar">
+    <h3>Select User</h3>
+    <ul>
+      <li
+        *ngFor="let user of userNames"
+        (click)="selectUser(user)"
+        [class.selected]="user === selectedUser"
+      >
+        {{ user }}
+      </li>
+    </ul>
+  </div>
+  <div class="chart-section">
+    <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+  </div>
+</div>
